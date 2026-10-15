@@ -1,12 +1,27 @@
 :root {
-    --main-background: white;
-    --secondary-bg: #000;
+    --main-text: white;
+    --secondary-text: #000;
+    --bg: #D4C5E2;
+    --dark-bg: #050505;
+    --primary-highlight: #fff;
     --primary-color: #f0e2b9;
+    --dark-primary: #303030;
+    --dark-shadow: #1c1c1c;
     --primary-shadow: #efb75d;
     --secondary-color: #00A7E1;
+    --secondary-shadow: #0d63e4;
     --error-color: #9A031E;
     --warning-color: #FF9B42;
     --success-color: #00AF54;
+}
+
+.darkmode {
+    --main-text: white;
+    --secondary-text: #1b1b1b;
+    --primary-color: #303030;
+    --primary-shadow: #202020;
+    --bg: #050505;
+    --primary-highlight:#4f4f4f;
 }
 
 @font-face {
@@ -17,7 +32,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: var(--secondary-bg);
+    background-color: var(--bg);
     scroll-behavior: smooth;
 }
 
@@ -39,10 +54,12 @@ header {
     justify-content:space-between;
     padding: 10px 40px;
     z-index: 999;
-    background-color: #4b4b4b;
+    background-color: var(--primary-color);
     backdrop-filter: blur(10px);
     width: 100%;
-    border-radius: 4px;
+    border-radius: 11px;
+    box-shadow: 0.25rem 0.25rem #121212;
+    border: solid 0.125rem #121212;
 }
 
 a.retro, button.retro {
@@ -50,7 +67,7 @@ a.retro, button.retro {
     padding: 0.75rem 1rem;
     border-radius: 1rem;
     border: solid 0.125rem #121212;
-    color: var(--secondary-bg);
+    color: var(--secondary-text);
     box-shadow: 0.25rem 0.25rem #121212, inset -5px -5px 0px 0px var(--primary-shadow);
     cursor: pointer;
     transition: translate 200ms, box-shadow 0.3s ease, transform 0.3s ease;
@@ -59,8 +76,19 @@ a.retro, button.retro {
     text-transform: uppercase;
 }
 
+#main-btn.retro {
+    background-color: var(--secondary-color);
+    color: #fff;
+    box-shadow: 0.25rem 0.25rem #121212, inset -5px -5px 0px 0px var(--secondary-shadow);
+}
+
 .retro:hover {
-    box-shadow: inset 5px 5px 0px 0px var(--main-background), 0.25rem 0.25rem #121212, inset -5px -5px 0px 0px var(--primary-shadow);
+    box-shadow: inset 5px 5px 0px 0px var(--primary-highlight), 0.25rem 0.25rem #121212, inset -5px -5px 0px 0px var(--primary-shadow);
+    transform: scale(1.02);
+}
+
+#main-btn.retro:hover {
+    box-shadow: inset 5px 5px 0px 0px #b1daff, 0.25rem 0.25rem #121212, inset -5px -5px 0px 0px var(--secondary-shadow);
     transform: scale(1.02);
 }
 
@@ -68,6 +96,21 @@ a.retro, button.retro {
     translate: 0.125rem 0.125rem;
     box-shadow: 0.125rem 0.125rem #121212, inset -5px -5px 0px 0px var(--primary-shadow);
     transform: scale(1);
+}
+
+#main-btn.retro:active {
+    translate: 0.125rem 0.125rem;
+    box-shadow: 0.125rem 0.125rem #121212, inset -5px -5px 0px 0px var(--secondary-shadow);
+    transform: scale(1);
+}
+
+#theme-switch svg {
+    fill: var(--secondary-text);
+    width: auto;
+}
+
+#theme-switch svg:first-child {
+    display: none;
 }
 
 .head-left{
@@ -83,6 +126,14 @@ a.retro, button.retro {
 
 .head-right{
     display: flex;
+    gap: 10px, 20px;
+    width:fit-content;
+}
+
+.head-right button{
+    text-decoration: none;
+    margin: .3em;
+    font-size: 15px;
 }
 
 .head-right a{
