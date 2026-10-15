@@ -74,6 +74,9 @@ a.retro, button.retro {
     font-family: "Departure";
     font-weight: bold;
     text-transform: uppercase;
+    height: 45px;
+    display: flex;
+    align-items: center;
 }
 
 #main-btn.retro {
@@ -107,10 +110,20 @@ a.retro, button.retro {
 #theme-switch svg {
     fill: var(--secondary-text);
     width: auto;
+    height:24px;
+    position: relative;
 }
 
 #theme-switch svg:first-child {
     display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+    display: block;
 }
 
 .head-left{
