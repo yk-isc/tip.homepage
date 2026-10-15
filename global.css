@@ -45,22 +45,29 @@ header {
     border-radius: 4px;
 }
 
-button.retro {
+a.retro, button.retro {
     background-color: var(--primary-color);
     padding: 0.75rem 1rem;
     border-radius: 1rem;
     border: solid 0.125rem #121212;
-    box-shadow: 0.25rem 0.25rem #121212, inset -5px -5px 0px 0px var(--primary-shadow), inset 5px 5px 0px 0px var(--main-background);
+    color: var(--secondary-bg);
+    box-shadow: 0.25rem 0.25rem #121212, inset -5px -5px 0px 0px var(--primary-shadow);
     cursor: pointer;
-    transition: translate 200ms, box-shadow 200ms;
+    transition: translate 200ms, box-shadow 0.3s ease, transform 0.3s ease;
     font-family: "Departure";
     font-weight: bold;
     text-transform: uppercase;
 }
 
+.retro:hover {
+    box-shadow: inset 5px 5px 0px 0px var(--main-background), 0.25rem 0.25rem #121212, inset -5px -5px 0px 0px var(--primary-shadow);
+    transform: scale(1.02);
+}
+
 .retro:active {
     translate: 0.125rem 0.125rem;
-    box-shadow: 0.125rem 0.125rem #121212, inset -5px -5px 0px 0px var(--primary-shadow), inset 5px 5px 0px 0px #fff;
+    box-shadow: 0.125rem 0.125rem #121212, inset -5px -5px 0px 0px var(--primary-shadow);
+    transform: scale(1);
 }
 
 .head-left{
