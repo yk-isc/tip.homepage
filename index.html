@@ -7,36 +7,111 @@
     <link rel="stylesheet" href="global.css">
     <script type="text/javascript" src="main.js" defer></script>
     <script type="text/javascript" src="darkmode.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrambleTextPlugin.min.js" integrity="sha512-EVIYaMR2tIn6veV5jmP0M0DFBSBt5rAhRPsW0zwC9LyPzAIHNeWiZ4B5orgYeWbNq55vIwk8fOKCtTHwiCBvaw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <div class="container">
-        <header>
+    <div class="cursor" id="cursor">
+        <div class="cursor-inner"></div>
+    </div>
+    <header>
             <div class="head-left">
                 <img src="#" alt="logo">
-                <button class="retro" id="main-btn">
-                    Products
+                <div id="main-time">
+                    <p id="time">xx:xx</p>
 
                     <audio id="clickSound">
                         <source src="assets/sounds/active-button.mp3">
                     </audio>
-                </button>
+                </div>
             </div>
 
             <div class="head-right">
-                <button class="retro">Home</button>
-                <button class="retro">ABOUT</button>
+                <div class="glass-slide">
+                    <div class="glass-effect">
+                        
+                    <svg>
+                        <filter id="glass-distortion">
+                            <feTurbulence
+                            type="fractalNoise"
+                            baseFrequency="0.01 0.01"
+                            numOctaves="1"
+                            seed="5"
+                            result="turbulence"
+                            />
+                            <feGaussianBlur in="turbulence"
+                            stdDeviation="3" result="softMap" />
+                            <feDisplacementMap in="SourceGraphic"
+                            in2="softMap" scale="150" />
+                        </filter>
+                    </svg>
+                    </div>
+                </div>
+                <a class="retro">Home</a>
+                <a class="retro">About</a>
                 <button class="retro" id="theme-switch">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M338.5-338.5Q280-397 280-480t58.5-141.5Q397-680 480-680t141.5 58.5Q680-563 680-480t-58.5 141.5Q563-280 480-280t-141.5-58.5ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/></svg>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/></svg>
                 </button>
             </div>
         </header>
-
-       <section class="hero-section">
-            <div class="hero-vid">
+    <div class="container">
+       <section class="hero">
+            <div class="hero-content">
+                <h1>Isaac<span style="color: var(--secondary-color);">*</span><span id="hero-span">Loveras</span></h1>
                 
             </div>
        </section>
     </div>
+
+    <script>
+      const text = document.getElementById("time");
+        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
+
+        function scrambleEffect() {
+            if (!gsap.isTweening(text)) {
+                gsap.to(text, {
+                    duration: 1,
+                    scrambleText: {
+                        text: text.textContent,
+                        chars: chars,
+                        speed: 3
+                    }
+                });
+            }
+        }
+        text.addEventListener("mouseover", scrambleEffect);
+    </script>
+    <script>
+        const header = document.querySelector(".header");
+        const buttons = document.querySelectorAll(".retro");
+        const slide = document.querySelector(".glass-slide");
+        const nav = document.querySelector(".head-right");
+
+        function updateActive(item) {
+            slide.style.width = `${item.offsetWidth}px`;
+            slide.style.left = `${item.offsetLeft}px`;
+            slide.style.opacity = '1';
+
+            buttons.forEach(b => b.classList.remove('active'));
+            item.classList.add('active');
+        }
+
+        const firstActive = document.querySelector('.retro.active') || buttons[0];
+        if (firstActive) {
+            updateActive(firstActive);
+        }
+
+        buttons.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                updateActive(item);
+            })
+        })
+        nav.addEventListener('mouseleave', () => {
+            slide.style.opacity = '0';
+            buttons.forEach(b => b.classList.remove('active'));
+        });
+    </script>
 </body>
 </html>
