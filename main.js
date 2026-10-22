@@ -34,7 +34,31 @@ window.addEventListener("mousemove", (e)=>{
         cursor.style.left = `${e.clientX}px`;
     }, 100)
 
-    cursor.classList.toggle("active", !!e.target.closest("#hero-span"));
+    let hovered = e.target.closest(".window");
+    document.querySelectorAll(".window.activity").forEach(win => {
+        if (win === hovered) {
+            win.classList.add("activity")
+
+            const handles = win.querySelectorAll(".handle");
+            handles.forEach(handle => {
+                handle.style.backgroundColor = "var(--secondary-color)";
+            })
+        }
+        else {
+            win.classList.remove("activity");
+
+            const handles = win.querySelectorAll(".handle");
+            handles.forEach(handle => {
+                handle.style.backgroundColor = "white";
+            })
+        }
+    })
+
+    if (hovered) {
+        hovered.classList.add("activity")
+    }
+
+    cursor.classList.toggle("active", !!e.target.closest(".window"));
     cursor.classList.toggle("shrink", !!e.target.closest('.retro'));
 })
 
@@ -51,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function darkHour() {
         const hour = new Date().getHours();
-        const dark = 0;
+        const dark = 22;
         const mainTime = document.getElementById("main-time");
 
         if (hour === dark) {

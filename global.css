@@ -11,7 +11,7 @@
     --error-color: #9A031E;
     --warning-color: #FF9B42;
     --success-color: #00AF54;
-    --title-font: "Roman-Antique";
+    --title-font: "AHGrotesque";
     --body-font: "Inter";
 }
 
@@ -50,7 +50,7 @@
 
 @font-face {
     font-family: Redaction-50;
-    src: url(assets/fonts/redaction-50-latin-700-normal.woff2)
+    src: url(assets/fonts/redaction-50-latin-700-normal.woff2);
 }
 
 @font-face {
@@ -58,11 +58,28 @@
     src: url(assets/fonts/RomanAntique-Italic.woff2) format('woff2');
 }
 
+@font-face {
+    font-family: AHGrotesque;
+    src: url(assets/fonts/AlteHaasGroteskRegular.woff2) format("woff2");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: AHGrotesque;
+    src: url(assets/fonts/AlteHaasGroteskBold.woff2) format('woff2');
+    font-weight: bold;
+}
+
+html {
+    height: 100%
+}
+
 body {
     margin: 0;
     padding: 0;
     background-color: var(--bg);
     scroll-behavior: smooth;
+    height: 100%;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -103,26 +120,27 @@ body {
     font-family: var(--body-font);
     margin: 0 auto;
     position: relative;
-    width: 100%;
+    height: calc(100vh - 70px);
 }
 
 header {
-    position: absolute;
+    position: sticky;
     top: 0;
-    right: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
     display: flex;
     align-items: center;
+    align-content: center;
     justify-content:space-between;
     padding: 7px 40px;
     z-index: 999;
     background-color: var(--main-bg);
-    width: 90%;
+    width: 85%;
+    height: 70px;
     box-sizing: border-box;
-    margin-top: 10px;
+    margin: 10px auto 0 auto;
     border-bottom: 1px solid rgba(255,255,255,0.3);
     border-radius: 1rem;
+    backdrop-filter: blur(2px) saturate(180%);
 }
 
 a.retro, button.retro {
@@ -134,26 +152,33 @@ a.retro, button.retro {
     font-family: var(--body-font);
     font-weight: bold;
     letter-spacing: .6px;
-    height: 40px;
     display: flex;
     align-items: center;
     border-radius: .125rem;
     z-index: 2;
 }
 
+button.retro {
+    appearance: none;
+    box-shadow: none;
+    background: none;
+    outline: none;
+    border: none;
+}
+
 .glass-slide{
     position: absolute;
-    top: 7px;
-    height:calc(100% - 15px);
+    top: 12px;
+    height: calc(100% - 25px);
     z-index: 1;
     transition: left 0.35s cubic-bezier(0.16, 1, 0.3, 1), width 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
-    -webkit-backdrop-filter: blur(2px) saturate(180%);
     backdrop-filter: blur(2px) saturate(180%);
     border: solid 1px rgba(186, 184, 184, 0.8);
     border-radius: 1rem;
     box-shadow: inset 0 4px 20px rgba(255,255,255,0.3);
     opacity: 0;
     overflow: hidden;
+    align-items: center;
 }
 
 .glass-effect {
@@ -166,38 +191,24 @@ a.retro, button.retro {
 }
 
 #main-time {
-    background-color: var(--inset-shadow);
     color: var(--main-text);
-    box-shadow: inset 2px 2px 2px 0px var(--primary-shadow), inset -2px -2px 2px 0px var(--primary-highlight);
-    padding:  1rem;
-    border-radius: .125rem;
-    border: solid 0.125rem #121212;
-    transition: translate 200ms, box-shadow 0.3s ease, transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
     font-family: var(--body-font);
-    text-transform: uppercase;
-    height: 15px;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
+    padding: 0 10px 0 10px;
+    top: 12px;
+    height: calc(100% - 25px);
+    z-index: 1;
+    transition: left 0.35s cubic-bezier(0.16, 1, 0.3, 1), width 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
     backdrop-filter: blur(2px) saturate(180%);
-    border-radius: 1rem;
-    box-shadow: inset 0 4px 20px rgba(255,255,255,0.1);
     border: solid 1px rgba(186, 184, 184, 0.8);
+    border-radius: 1rem;
+    box-shadow: inset 0 4px 20px rgba(255,255,255,0.3);
+    overflow: hidden;
+    align-items: center;
 }
 
 #time {
     z-index: 1;
     cursor: pointer;
-}
-
-.retro:hover {
-    position:relative;
-}
-
-.retro:active {
-    box-shadow: inset 2px 2px 4px 0px var(--inset-shadow), inset -1px -1px 5px 0px var(--primary-highlight);
-    color: var(--inset-text);
-    background-color: var(--inset-bg);
 }
 
 #theme-switch svg {
@@ -244,28 +255,43 @@ a.retro, button.retro {
 .hero {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
     justify-content: center;
     display: flex;
+    box-sizing:border-box;
+    padding: 6px;
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
-    display: flex;
-    margin: 30px;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 5px;
+    width:100%;
+    height: 100%;
 }
 
-.hero-content h1 {
+.div1 {
+    grid-column: span 5 / span 5;
+    grid-row: span 2 / span 2;
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+.div1 h1 {
     font-size: 200px;
     color: var(--main-text);
     font-family: var(--title-font);
-    font-style: italic;
+    text-transform: uppercase;
+    font-weight: 900;
     text-align: center;
-    
+    transform-origin: top left;
+    letter-spacing: -10px;
+    transform: scaleX(.7) scaleY(.9);
+    margin: 0;
 }
 
 #hero-span {
@@ -274,4 +300,75 @@ a.retro, button.retro {
     margin-left:0px;
     font-weight: bold;
     font-style: normal;
+    text-transform:none;
+    letter-spacing: 0px;
+    transform: scaleX(1);
+}
+
+.div2 {
+    grid-row: span 2 / span 2;
+    grid-column-start: 11;
+    grid-row-start: 3;
+    border: white 1px solid;
+    position: relative;
+    z-index: 1;
+}
+
+.handle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+}
+
+.top-left {
+    top: -4px;
+    left: -4px;
+}
+
+.top-right {
+    top: -4px;
+    right: -4px;
+}
+
+.bottom-left {
+    bottom: -4px;
+    left: -4px;
+}
+
+.bottom-right {
+    bottom: -4px;
+    right: -4px;
+}
+
+.window.activity.handle {
+    background-color: var(--secondary-color);
+}
+
+.window.activity {
+    border: var(--secondary-color) 1px solid;
+}
+
+.div3 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 11;
+    grid-row-start: 4;
+    border: white 1px solid;
+    position: relative;
+}
+
+.div4 {
+    grid-column: span 2 / span 2;
+    grid-column-start: 2;
+    grid-row-start: 3;
+    border: white 1px solid;
+    position: relative;
+}
+
+.div5 {
+    grid-column-start: 1;
+    grid-row-start: 5;
+    border: white 1px solid;
+    position: relative;
 }
