@@ -7,10 +7,12 @@ First iteration of my personal website. The theme I was going for was something 
 * The other contributor, islandiaarias, is still me, yk-isc, just on an alternate account. Everything in the site was made by me.
 * This is my first time making a complete website, so some tutorials have been used to implement features that I had wanted within the website. I have attempted to personalize them as much as I could.
 
-## Tutorials Used
+## Tutorials and References Used
 
 * [Dark Mode Tutorial] (https://www.youtube.com/watch?v=_gKEUYarehE)
 * [Custom Cursor Tutorial] (https://www.youtube.com/watch?v=ytagDDgHHUY)
+* [project://cult] (https://project-cult.digital/)
+* [Menu Tutorial] (https://www.youtube.com/watch?v=JsXqmhGMJcM)
 
 ## Intro and Purpose
 
@@ -28,6 +30,22 @@ Working on this site had been something I had wanted to do for a while, especial
 
 #### 10/21/26
 * Changed layout of the hero to grid, started making some interactive elements within it such as small windows that change color when hovered over. Also changed font of the header in the hero and removed the tailwind.css link in the index.html to remove bugs.
+* I was still unhappy with the layout of the hero in the grid, so I decided to see if I could reorganize it in a way that was similar to one of my main reference sites, which was [project://cult] (https://project-cult.digital/). Using this reference site and analyzing the features in it, I noticed one of the main things I liked about the site, which was the layout, was due to a grid. Today, I decided to implement the grid into my own design and also make border windows similar to the selection windows they use in the website. To do this, I created divs with a border and put different squares in them named "handles" which I would subtract some pixels in the positioning from in order to align it with the corners of the borders. Then, I decided to implement a hover animation to make it a little different than what was in the reference site. By implementing a .js script that checked for when the cursor hovered over anything with the class `.window`, I was able to make the borders turn the primary accent color of the site, which is blue. From here, I also changed the header position and font, positioning it in the upper left corner of the hero section. I will try to add more text later on once I know what to put.
+* Further things to put now include an image inside the window, more text to decorate the hero, and things that will help create a parallax effect.
+
+#### 10/22/26
+* Changed size of the main window in the hero, added more text and changed others, worked on light mode, added a side window for accessory.
+* When working on the design of the main website, many others that I asked did not like the words in the website or the main quote, and others thought the main design could have been better. Taking inspiration from project://cult again, I looked into how they positioned their words and worked on that. I first decided to change the quote to something different and also change the selection color just to make it look a little better. From there I decided to work on the positioning of everything. I first attempted to shift the margins of the divs inside the grid, and it did not look good. So then I decided to just shift the columns where everything started, which did look a lot better. I left it like that from there and started working on something that I could put on the side. While I was thinking about putting a separate navbar there only for the hero, I felt that would be inefficient considering there was already a navbar, so I am thinking of adding images there like photos. I positioned the photos in a grid inside that side window, and hopefully in the future they will scroll down to the `About` page.
+* Further things to add would be implementing the images inside the main window and the side windows, working on responsiveness of the hero, and starting on the About page. The priority at the moment would be starting the About page.
+
+#### 10/23/26
+* Added more subtext to fill in the negative space of the website.
+* After looking at my website some more, I noticed that there was some negative space that could be filled in, though I didn't know how. The whole thing just looked empty. So then I went back to my reference site and looked at a bunch of other designs, noticing that they all had text. So, still using the grid that I had made before for the hero, I placed more divs with different text in them. Within them, I styled the text in a way that made certain parts of it bolder to hint at one of the easter eggs. I also tried to add an effect to the text to make it similar to the time effect, though I couldn't figure out how.
+
+#### 11/4/26
+* I had not updated for a while due to taking a long break from coding. I had lost inspiration for the website and was stuck in the creative direction it should go. The navbar did not match the vision I had for it, and there weren't animations to make the website more interactive, which I was going for. I was absolutely stuck, and no guides online would help me, so I decided to take a mental break from it. In addition, I started getting packed with work from school. To be honest, the thing that brought me back was Persona, as after playing that game, I found a different vision that I found much more appealing for what I wanted, so I want to go for a more mixed media approach, with some aspects being digital and some aspects being "physical." So, on this day, I started to build again. On 11/3/26, I went and tried looking for more inspiration to save for later, and planned to make the main framework for the website when I had time. I wanted to make sure that I executed my vision for the website the way I wanted to, but speaking of which, I have not made the assets for the website just yet. On this day, I went searching for a video that I could follow to create a framework for the navbar, and I found some effect that I found very cool, with the main page going down and shrinking to reveal the main navbar, with the text popping up through animations. While I will change how it looks soon, for now, it looks exactly like the tutorial to offer a template that I can use to add more things on top of it. I had to refine a lot of the HTML and the CSS, and I decided to make a new JavaScript file named `menu.js`. I renamed some classes for better comfort, and I eliminated the old menu that I had originally. I will probably have to clean up `main.js` soon due to expelling some aspects of the HTML and CSS. Going forward, I will probably try to make the homepage look more appealing with different shapes, though today I want to make sure that I lay out what I want the website to look like. 
+* Todo: Make sure to start frameworking and asset creation, and once you have that, return to creating the rest of the site. Try best to refine the homepage site and/or make skeleton for rest of the site if no frameworking.
+
 ## Results
 
 ## Conclusion

@@ -49,7 +49,8 @@ window.addEventListener("mousemove", (e)=>{
 
             const handles = win.querySelectorAll(".handle");
             handles.forEach(handle => {
-                handle.style.backgroundColor = "white";
+                handle.style.backgroundColor = "var(--main-text)";
+                handle.style.boxShadow = "none";
             })
         }
     })
@@ -58,7 +59,7 @@ window.addEventListener("mousemove", (e)=>{
         hovered.classList.add("activity")
     }
 
-    cursor.classList.toggle("active", !!e.target.closest(".window"));
+    cursor.classList.toggle("active", !!e.target.closest(".window, .folder-ch"));
     cursor.classList.toggle("shrink", !!e.target.closest('.retro'));
 })
 
@@ -75,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function darkHour() {
         const hour = new Date().getHours();
-        const dark = 22;
+        const dark = 0;
         const mainTime = document.getElementById("main-time");
 
         if (hour === dark) {
