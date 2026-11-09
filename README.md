@@ -13,6 +13,7 @@ First iteration of my personal website. The theme I was going for was something 
 * [Custom Cursor Tutorial] (https://www.youtube.com/watch?v=ytagDDgHHUY)
 * [project://cult] (https://project-cult.digital/)
 * [Menu Tutorial] (https://www.youtube.com/watch?v=JsXqmhGMJcM)
+* [Menu Image Hover] (https://youtu.be/SePTLU3U60A?si=RQpA9aTKJNboTV0-)
 
 ## Intro and Purpose
 
@@ -45,6 +46,12 @@ Working on this site had been something I had wanted to do for a while, especial
 #### 11/4/26
 * I had not updated for a while due to taking a long break from coding. I had lost inspiration for the website and was stuck in the creative direction it should go. The navbar did not match the vision I had for it, and there weren't animations to make the website more interactive, which I was going for. I was absolutely stuck, and no guides online would help me, so I decided to take a mental break from it. In addition, I started getting packed with work from school. To be honest, the thing that brought me back was Persona, as after playing that game, I found a different vision that I found much more appealing for what I wanted, so I want to go for a more mixed media approach, with some aspects being digital and some aspects being "physical." So, on this day, I started to build again. On 11/3/26, I went and tried looking for more inspiration to save for later, and planned to make the main framework for the website when I had time. I wanted to make sure that I executed my vision for the website the way I wanted to, but speaking of which, I have not made the assets for the website just yet. On this day, I went searching for a video that I could follow to create a framework for the navbar, and I found some effect that I found very cool, with the main page going down and shrinking to reveal the main navbar, with the text popping up through animations. While I will change how it looks soon, for now, it looks exactly like the tutorial to offer a template that I can use to add more things on top of it. I had to refine a lot of the HTML and the CSS, and I decided to make a new JavaScript file named `menu.js`. I renamed some classes for better comfort, and I eliminated the old menu that I had originally. I will probably have to clean up `main.js` soon due to expelling some aspects of the HTML and CSS. Going forward, I will probably try to make the homepage look more appealing with different shapes, though today I want to make sure that I lay out what I want the website to look like. 
 * Todo: Make sure to start frameworking and asset creation, and once you have that, return to creating the rest of the site. Try best to refine the homepage site and/or make skeleton for rest of the site if no frameworking.
+
+#### 11/7-8/26
+* These days, I started to draw the hero instead of coding, which is where I went on Lapse to record. In general, I was pretty indecisive with waht I wanted the image to be like, but I did know that I had to have at least 4 images hopefully by the 13th. After looking through many poses, I ended up with a sitting pose with perspective, which I had to look at many references to create as I am not too good with perspective. By the time it was the 8th, I finished the sketch and after making the background, I will be ready to make the lineart and start coloring. As I am still waiting to finish up the images, I will start coding the basic layout for the website and plan where to put the images in those places. Following this plan, the website should be done before the 20th.
+* Todo: Finish up sketch and color image 1, start on images 2, 3, and 4; work on layout of the website, try to make (handdrawn?) components on Figma if needed, insert images and other assets, work on animations and responsiveness (if time allows), ship the website
+
+#### 11/9/26
 
 ## Results
 
