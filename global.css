@@ -568,6 +568,7 @@ body::-webkit-scrollbar,
     transform: translateY(0.05em);
     perspective: 800px;
     cursor: pointer;
+    z-index: 1;
 }
 
 .nav-img {

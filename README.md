@@ -52,7 +52,12 @@ Working on this site had been something I had wanted to do for a while, especial
 * Todo: Finish up sketch and color image 1, start on images 2, 3, and 4; work on layout of the website, try to make (handdrawn?) components on Figma if needed, insert images and other assets, work on animations and responsiveness (if time allows), ship the website
 
 #### 11/9/26
+* Today, most of the time that I spent was finishing up the website hero's sketch. After a lot of trial and error, I did eventually get to a sketch I liked and ended the day with unfinished lineart. I also ended up working on the nav menu's different card effects, which finally worked. Using the cards, I ended up learning some more about GSAP. 
+* Todo: Color image 1, start on images 2, 3, and 4; work on layout of the website, look into components and assets to organize on Figma, insert images when ready, work on animations and responsiveness, ship the website
 
+#### 11/10/26
+* Today, I could not work on the actual website earlier due to forgetting to push what I have on my main computer to the GitHub so I could pull it from my laptop, and I am only writing this log as I am on my main computer. First off, I made sure to push all the updates to the GitHub so I could pull it from my other laptop, and I made sure to start finishing up the lineart and working on the coloring. In general, the lineart did take a lot of time and so did picking how I wanted to color it, but I eventually settled on what I wanted to do. While doing the lineart for image 1, I modified it a little bit compared to the sketch to not make the background look so boring. But other than that, I ended with the eyes and horn being rendered, with me still having to do hair, skin, clothes, etc, and then lighting and the water. Tomorrow I have more time to work on it, so I will try to do that.
+* Todo: Finish coloring image 1, start on images 2, 3, and 4; work on layout of the website, look into components and assets to organize on Figma, insert images when ready, work on animations and responsiveness, ship the website
 ## Results
 
 ## Conclusion

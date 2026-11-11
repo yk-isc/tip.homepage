@@ -84,6 +84,9 @@ document.addEventListener("DOMContentLoaded", function () {
             mainTime.style.boxShadow = "inset 0 4px 20px rgba(255,255,255,.5)";
             mainTime.style.color = "var(--main-text)";
         }
+        else {
+            return;
+        }
     }
 
     darkHour();

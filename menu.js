@@ -89,8 +89,8 @@ menuToggle.addEventListener("click", () => {
 
 /* cards in the nav */
 document.querySelectorAll(".nav-hover").forEach((hov) => {
-    const card = spot.querySelector(".nav-img");
-    const image = spot.querySelector("img")
+    const card = hov.querySelector(".nav-img");
+    const image = hov.querySelector("img")
 
     const live = { x: 0, y: 0, tiltX: 0, tiltY: 0};
     const aim = { x: 0, y: 0, tiltX: 0, tiltY: 0};
