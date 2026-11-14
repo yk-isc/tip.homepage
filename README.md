@@ -20,44 +20,116 @@ First iteration of my personal website. The theme I was going for was something 
 Working on this site had been something I had wanted to do for a while, especially since I had been certified in HTML and CSS for around 2 years now. This site was made to bring all my projects and skills into one place. In addition, it would be used for anything else that I like to do such as art. Essentially, it would create one big portfolio that would include sections for professional skills such as coding and CAD, with creative freelance skills on the side such as art or writing. It also gives me  achance to show off and refine the skills I currently have with web design and design in general. To add onto the creative portion of the website, I am thinking of adding easter eggs and hidden features that are not supposed to be the main focus of the site but will still help me refine my skills, like mini projects connected to the main one.
 
 ## Changelogs
-#### 10/15/26
+
+<details>
+<summary>
+10/15/26
+</summary>
 * By today, I have officially finished the basis of the darkmode function, the buttons in the header, the sounds the buttons make when pressed, creating a `:active` and `:hover` animation for the bottons, the positioning of each feature in the header, and the header itself.
 * As I was doing it, I was going off the inspiration of a retro feel with a small header to portray something like a cassette tape's buttons or a NES's buttons. Keeping this in mind, I designed the buttons as such while also making them look clean by using greyscale colors in the dark mode. I have not really worked on the light mode yet, though it had enough variable colors in it for me to change later. I utilized the Departure font to support the retro feel and I was also planning on using it as a body font, though I thought since it was pixelated, it might not have been readable. To make the darkmode button, I made sure to use the `.retro` class to keep the original design of the buttons, though instead of putting text, I decided to put a crescent and sun icon to represent the light and dark mode, as most apps and other websites have. I also made sure to create a good amount of contrast with the base colors for better accessibility but also appeal. Of course, I am planning to add hand-drawn images onto the website, though I have not found the time to make the images as of now. I then went into `main.js` to code the logic behind the dark mode button, but I had realized doing it in that file would be conflicting with the sound system I had implemented. The sound system would only be triggered when the button was being clicked on, though due to the logic bugging out, I decided to just make another folder especially for the dark mode and link it to the `index.html` file, which was `darkmode.js`. After some trial and error, it still wasn't working, so I watched a tutorial to refine the code. I then finished it off and committed with a completed dark mode system (amongst other things).
+</details>
 
-#### 10/20/26
+<details>
+<summary>
+10/20/26
+</summary>
 * Added a clock that changes at a certain hour, changed the header design, added more interactivity in the header, added a hero heading, and created a custom cursor.
 * After looking back at the designs with the buttons that I had made in the header, I realized that the retro vibe with the buttons was not the one that I was going for nor that I felt was something that I would want to see on my own personal website (after looking at the bigger picture of things). Once I designed what I wanted the hero to look like, the header was something that just wouldn't fit in the website. With this revelation, I decided to remake the header and add a feature that I was thinking of for a while, which was a clock. I first decided to add the clock with the original retro theme to see how it would look, with the logic being coded into the main.js file (though it did cause some errors at first). After seeing the clock work, I then realized that it only changed the time when the page was refreshed. To solve this, I decided to use the `updateTime()` function that I had made and set the interval to change every 1000 milliseconds, or every 1 second. I then moved on with the decoration and created a function in the `main.js` file where, depending on the current local time, the container holding the time would change into a certain color. I plan to use this function for more things later, where at the set hour, certain other parts of the website will unlock. After adding the clock, I went and gathered inspiration for about half a day and decided I mostly liked the liquid glass or glassmorphism that Apple utilized and how modern and sleek (but still digitized) it felt. I implemented it into my header, adding a special container that would only show when hovering over one of the buttons. With that, I also turned the buttons into links (a). This logic was probably one of the things that took me the longest to do along with the custom cursor, though with the liquid glass I was unassisted. I first started to work on the main container that would hover over the links, which had a blur `backdrop-filter`, a box-shadow and border to create the refraction effect, and also making transitioning from one link to the other dynamic with a transition. I coded the logic within the html file while also adding a scramble effect that would be shown when you hover over the clock's text. I was proud with how the effects looked so far, though the only thing that was throwing me off at this point would be the fonts, colors, and the header container itself. So I decided to take some features from the new `.retro` and inserted them into the header to fit the constraints of the liquid glass effect, creating a sleek feel overall. To contribute to this feeling, I decided to change the body font to Inter, which helped the effect way more than the original font, Departure, did. I also did the same with the main hero text, changing my last name to a `<span>` to make it smaller and make it Inter. However, with my first name, I made it a heading font. This was a long process, and I could not choose which to put for a while, but I ended up going with Roman Antique after comparing options such as Aktura, Redaction 50, and Pixel Digivolve. For a nice effect, I also made the asterisk next to my first name blue and made my first and last name closer together. After doing this, I decided to work on something that would give a nice touch to the website, which was a custom cursor. I did not research long before finding not only a tutorial focused on only HTML, CSS, and JS (instead of a framework like Next.js), but many references that I thought were dynamic and simplistic. I went and made my cursor a square that rotated, and using the tutorial, I created a delay as it followed the mouse through `main.js` using `setTimeout`. I also added special filters such as inverting the colors behind it and making it greyscale. In addition to this, I went through the hardest part, which was transforming the cursor itself. I wanted it to scale to 0 when going over the buttons in the header and scale up when it went over a certain part (I used #hero-span to test this, though it will not stay like that). It was not hard because of writing the logic itself, but instead, it was hard because it kept conflicting with other pieces of logic or CSS values, such as the animation where it would rotate. After changing some things around and searching up other syntax for JavaScript, I came across `classList.toggle`, which still added the respective effects I wanted to add under the conditions I specified while also keeping the rotation. This whole thing was by far something that took way more time than I thought it would.
 * Further things to do would be working on effects in the hero, working on scrolling animations, working on the things in the website that would appear at the specified hour, and the drawings that would be added to create a parallax effect in the website.
+</details>
 
-#### 10/21/26
+<details>
+<summary>
+10/21/26
+</summary>
+
 * Changed layout of the hero to grid, started making some interactive elements within it such as small windows that change color when hovered over. Also changed font of the header in the hero and removed the tailwind.css link in the index.html to remove bugs.
 * I was still unhappy with the layout of the hero in the grid, so I decided to see if I could reorganize it in a way that was similar to one of my main reference sites, which was [project://cult] (https://project-cult.digital/). Using this reference site and analyzing the features in it, I noticed one of the main things I liked about the site, which was the layout, was due to a grid. Today, I decided to implement the grid into my own design and also make border windows similar to the selection windows they use in the website. To do this, I created divs with a border and put different squares in them named "handles" which I would subtract some pixels in the positioning from in order to align it with the corners of the borders. Then, I decided to implement a hover animation to make it a little different than what was in the reference site. By implementing a .js script that checked for when the cursor hovered over anything with the class `.window`, I was able to make the borders turn the primary accent color of the site, which is blue. From here, I also changed the header position and font, positioning it in the upper left corner of the hero section. I will try to add more text later on once I know what to put.
 * Further things to put now include an image inside the window, more text to decorate the hero, and things that will help create a parallax effect.
+</details>
 
-#### 10/22/26
+<details>
+<summary>
+10/22/26
+</summary>
+
 * Changed size of the main window in the hero, added more text and changed others, worked on light mode, added a side window for accessory.
 * When working on the design of the main website, many others that I asked did not like the words in the website or the main quote, and others thought the main design could have been better. Taking inspiration from project://cult again, I looked into how they positioned their words and worked on that. I first decided to change the quote to something different and also change the selection color just to make it look a little better. From there I decided to work on the positioning of everything. I first attempted to shift the margins of the divs inside the grid, and it did not look good. So then I decided to just shift the columns where everything started, which did look a lot better. I left it like that from there and started working on something that I could put on the side. While I was thinking about putting a separate navbar there only for the hero, I felt that would be inefficient considering there was already a navbar, so I am thinking of adding images there like photos. I positioned the photos in a grid inside that side window, and hopefully in the future they will scroll down to the `About` page.
 * Further things to add would be implementing the images inside the main window and the side windows, working on responsiveness of the hero, and starting on the About page. The priority at the moment would be starting the About page.
+</details>
 
-#### 10/23/26
+<details>
+<summary>
+10/23/26
+</summary>
+
 * Added more subtext to fill in the negative space of the website.
 * After looking at my website some more, I noticed that there was some negative space that could be filled in, though I didn't know how. The whole thing just looked empty. So then I went back to my reference site and looked at a bunch of other designs, noticing that they all had text. So, still using the grid that I had made before for the hero, I placed more divs with different text in them. Within them, I styled the text in a way that made certain parts of it bolder to hint at one of the easter eggs. I also tried to add an effect to the text to make it similar to the time effect, though I couldn't figure out how.
+</details>
 
-#### 11/4/26
+<details>
+<summary>
+11/4/26
+</summary>
+
 * I had not updated for a while due to taking a long break from coding. I had lost inspiration for the website and was stuck in the creative direction it should go. The navbar did not match the vision I had for it, and there weren't animations to make the website more interactive, which I was going for. I was absolutely stuck, and no guides online would help me, so I decided to take a mental break from it. In addition, I started getting packed with work from school. To be honest, the thing that brought me back was Persona, as after playing that game, I found a different vision that I found much more appealing for what I wanted, so I want to go for a more mixed media approach, with some aspects being digital and some aspects being "physical." So, on this day, I started to build again. On 11/3/26, I went and tried looking for more inspiration to save for later, and planned to make the main framework for the website when I had time. I wanted to make sure that I executed my vision for the website the way I wanted to, but speaking of which, I have not made the assets for the website just yet. On this day, I went searching for a video that I could follow to create a framework for the navbar, and I found some effect that I found very cool, with the main page going down and shrinking to reveal the main navbar, with the text popping up through animations. While I will change how it looks soon, for now, it looks exactly like the tutorial to offer a template that I can use to add more things on top of it. I had to refine a lot of the HTML and the CSS, and I decided to make a new JavaScript file named `menu.js`. I renamed some classes for better comfort, and I eliminated the old menu that I had originally. I will probably have to clean up `main.js` soon due to expelling some aspects of the HTML and CSS. Going forward, I will probably try to make the homepage look more appealing with different shapes, though today I want to make sure that I lay out what I want the website to look like. 
 * Todo: Make sure to start frameworking and asset creation, and once you have that, return to creating the rest of the site. Try best to refine the homepage site and/or make skeleton for rest of the site if no frameworking.
+</details>
 
-#### 11/7-8/26
+<details>
+<summary>
+11/7-8/26
+</summary>
+
 * These days, I started to draw the hero instead of coding, which is where I went on Lapse to record. In general, I was pretty indecisive with waht I wanted the image to be like, but I did know that I had to have at least 4 images hopefully by the 13th. After looking through many poses, I ended up with a sitting pose with perspective, which I had to look at many references to create as I am not too good with perspective. By the time it was the 8th, I finished the sketch and after making the background, I will be ready to make the lineart and start coloring. As I am still waiting to finish up the images, I will start coding the basic layout for the website and plan where to put the images in those places. Following this plan, the website should be done before the 20th.
 * Todo: Finish up sketch and color image 1, start on images 2, 3, and 4; work on layout of the website, try to make (handdrawn?) components on Figma if needed, insert images and other assets, work on animations and responsiveness (if time allows), ship the website
+</details>
 
-#### 11/9/26
+<details>
+<summary>
+11/9/26
+</summary>
+
 * Today, most of the time that I spent was finishing up the website hero's sketch. After a lot of trial and error, I did eventually get to a sketch I liked and ended the day with unfinished lineart. I also ended up working on the nav menu's different card effects, which finally worked. Using the cards, I ended up learning some more about GSAP. 
 * Todo: Color image 1, start on images 2, 3, and 4; work on layout of the website, look into components and assets to organize on Figma, insert images when ready, work on animations and responsiveness, ship the website
+</details>
 
-#### 11/10/26
+<details>
+<summary>
+11/10/26
+</summary>
+
 * Today, I could not work on the actual website earlier due to forgetting to push what I have on my main computer to the GitHub so I could pull it from my laptop, and I am only writing this log as I am on my main computer. First off, I made sure to push all the updates to the GitHub so I could pull it from my other laptop, and I made sure to start finishing up the lineart and working on the coloring. In general, the lineart did take a lot of time and so did picking how I wanted to color it, but I eventually settled on what I wanted to do. While doing the lineart for image 1, I modified it a little bit compared to the sketch to not make the background look so boring. But other than that, I ended with the eyes and horn being rendered, with me still having to do hair, skin, clothes, etc, and then lighting and the water. Tomorrow I have more time to work on it, so I will try to do that.
 * Todo: Finish coloring image 1, start on images 2, 3, and 4; work on layout of the website, look into components and assets to organize on Figma, insert images when ready, work on animations and responsiveness, ship the website
+</details>
+
+<details>
+<summary>
+11/11/26
+</summary>
+
+* While I could not get as much hours as I usually do, today I just made sure to at least get something in. I decided that today I would start rendering the background and lighting, though I am not done shading the shirt or pants or anything like that. While looking at other websites, I was thinking of trying to make the art end up looking like spash art by the end, as I like the style of how they do it and I have a decent idea of how to design it based around that. My time might also become more occupied starting tomorrow, as I have started planning another project and my weekend is taken by an event. I will have to find out a way to work around that while still getting the required hours.
+* Todo: Finish coloring image 1, start on images 2, 3, and 4; work on layout of the website, look into components and assets to organize on Figma, insert images when ready, work on animations and responsiveness, ship the website
+</details>
+
+<details>
+<summary>
+11/12/26
+</summary>
+
+* Today, I was planning to try and not only get the drawing in but start laying out the website. Unfortunately, the only thing that I could do was to continue working on rendering the drawing. Other than that, I will try and save laying out the website for when I have time.
+* Todo: Finish rendering image 1, start on images 2, 3, and 4; work on layout of the website, look into components and assets to organize on Figma, insert images when ready, work on animations and responsiveness, ship the website
+</details>
+
+<details>
+<summary>
+11/13/26
+</summary>
+
+* While I could not work on the site as much as usual, I did end up researching different site layouts to start working on the layout of the site. I tried my best to start laying as much of it out as I could, which is moreso a card and paragraph side by side then working on the transitions. Overall, I began laying it out today and I will most likely try to be done with the basic layout by tomorrow. After that, I want to start importing the images and assets and then working on the responsiveness of the website. I did also try making assets in Figma, and I found the way I was going about it to be a little inefficient considering I was not used to Figma. I will probably only use it rarely for laying things out just to see how they look, but I feel more used to simply editing the code. I also want to acknowledge that I will definitely not have as much time as I would usually have for working on this website, especially because I decided to start a different project today. I need to make sure to plan accordingly and fit in as much coding time as I can.
+* Todo: Finish rendering image 1, work on all other assets needed after laying out the website, insert images when ready, work on animations and responsiveness, ship the website
+</details>
+
 ## Results
 
 ## Conclusion
